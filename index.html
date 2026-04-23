@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FBI VRP TikTok Bot</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #12121a;
+      --surface-2: #171722;
+      --border: #232335;
+      --accent: #fe2c55;
+      --text: #ececf6;
+      --muted: #9a9ab3;
+      --soft: #d8d8e8;
+      --ok: #23c483;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+      background: rgba(18, 18, 26, 0.92);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wrap {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--text);
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    main {
+      padding: 42px 0 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      align-items: stretch;
+      margin-bottom: 22px;
+    }
+
+    .hero-main,
+    .hero-side {
+      background: linear-gradient(180deg, rgba(254, 44, 85, 0.10), rgba(23, 23, 34, 0.94));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'DM Serif Display', serif;
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      margin-bottom: 14px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    p,
+    li {
+      color: var(--soft);
+    }
+
+    .meta {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.18s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .btn-primary:hover {
+      text-decoration: none;
+      opacity: 0.92;
+    }
+
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      text-decoration: none;
+      background: #1b1b29;
+    }
+
+    .mini-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+    }
+
+    .mini-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .mini-list li:last-child {
+      border-bottom: 0;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--ok);
+      margin-top: 10px;
+      flex: 0 0 10px;
+    }
+
+    section.block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      height: 100%;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(254, 44, 85, 0.16);
+      border: 1px solid rgba(254, 44, 85, 0.28);
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .notice {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 14px;
+      padding: 16px;
+      color: var(--soft);
+      margin-top: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      padding: 24px 0 40px;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .grid-3,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">FBI VRP TikTok Bot</div>
+      <nav>
+        <a href="./index.html">Website</a>
+        <a href="./privacy.html">Privacy Policy</a>
+        <a href="./tos.html">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-main">
+        <div class="eyebrow">TikTok Content Posting API Integration</div>
+        <h1>Discord-based TikTok video submission, review, and publishing workflow.</h1>
+        <p>
+          FBI VRP TikTok Bot is a Discord bot that allows authorized users to submit videos,
+          captions, and hashtags from داخل Discord for moderation review and possible publishing
+          to a connected TikTok account using TikTok's official Content Posting API.
+        </p>
+        <p class="meta">
+          Website for app review, legal information, and service overview.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="./privacy.html">Read Privacy Policy</a>
+          <a class="btn btn-secondary" href="./tos.html">Read Terms of Service</a>
+        </div>
+      </div>
+
+      <div class="hero-side">
+        <h3>Core workflow</h3>
+        <ul class="mini-list">
+          <li><span class="dot"></span><span>Authorized Discord users submit a video request.</span></li>
+          <li><span class="dot"></span><span>Moderators review captions, hashtags, and file details.</span></li>
+          <li><span class="dot"></span><span>Requests can be approved, rejected, or edited before publishing.</span></li>
+          <li><span class="dot"></span><span>Approved content is uploaded and published to a connected TikTok account.</span></li>
+          <li><span class="dot"></span><span>Status and operational logs are tracked for moderation and troubleshooting.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>What this service does</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Submission</h3>
+          <p>
+            Users can submit video files together with captions and hashtags from Discord
+            through a controlled workflow.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Moderation</h3>
+          <p>
+            Authorized staff can review each request, inspect content details, edit text fields,
+            and decide whether to approve or reject the submission.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Publishing</h3>
+          <p>
+            Once approved, the bot processes the request and sends the content to TikTok through
+            the official API, then tracks publish status and logs outcomes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="card">
+          <div class="step-num">1</div>
+          <h3>Submit</h3>
+          <p>
+            A user uploads a supported video file and includes caption text or hashtags inside Discord.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="step-num">2</div>
+          <h3>Review</h3>
+          <p>
+            The request is sent to a designated approval workflow where authorized staff can inspect it.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="step-num">3</div>
+          <h3>Approve or reject</h3>
+          <p>
+            Moderators may approve, reject, limit, cancel, or edit request text before publishing.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="step-num">4</div>
+          <h3>Publish</h3>
+          <p>
+            Approved requests are uploaded to the connected TikTok account and tracked until completion or failure.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Key service characteristics</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Permission-controlled</h3>
+          <p>
+            The workflow is designed for controlled server environments with role-based access,
+            moderation review, and approval restrictions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Operational logging</h3>
+          <p>
+            Request states, approvals, failures, timestamps, and related operational events may be logged
+            for troubleshooting and moderation history.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>API-based publishing</h3>
+          <p>
+            The service relies on TikTok's official API and is subject to TikTok platform rules,
+            availability, restrictions, and review requirements.
+          </p>
+        </div>
+      </div>
+
+      <div class="notice">
+        Publication is not guaranteed. Requests may be delayed, rejected, limited, or fail because of moderation decisions,
+        service settings, third-party platform restrictions, or API-related conditions.
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Legal and policy pages</h2>
+      <ul>
+        <li><a href="./privacy.html">Privacy Policy</a></li>
+        <li><a href="./tos.html">Terms of Service</a></li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>Contact and project page</h2>
+      <p>
+        For project-related questions or review references, please use the repository below:
+      </p>
+      <p>
+        <a href="https://github.com/Waleed129/tiktok-discord-bot9876543456" target="_blank" rel="noopener noreferrer">
+          github.com/Waleed129/tiktok-discord-bot9876543456
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 FBI VRP TikTok Bot ·
+      <a href="./index.html">Website</a> ·
+      <a href="./privacy.html">Privacy Policy</a> ·
+      <a href="./tos.html">Terms of Service</a>
+    </div>
+  </footer>
+</body>
+</html>
