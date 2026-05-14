@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Terms of Service – FBI VRP Content Bot</title>
+  <title>Terms of Service – FBI VRP</title>
+
+  <meta name="description" content="Terms of Service for FBI VRP, a Discord-based publishing workflow using TikTok's Content Posting API." />
+
+  <link rel="icon" type="image/png" href="./icon.png" />
+  <link rel="apple-touch-icon" href="./icon.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
@@ -14,7 +19,7 @@
       --surface: #12121a;
       --surface-2: #171722;
       --border: #232335;
-      --accent: #fe2c55;
+      --accent: #7df6ff;
       --text: #ececf6;
       --muted: #9a9ab3;
       --soft: #d8d8e8;
@@ -31,7 +36,7 @@
     body {
       margin: 0;
       font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
+      background: radial-gradient(circle at top, rgba(125, 246, 255, 0.08), transparent 38%), var(--bg);
       color: var(--text);
       line-height: 1.8;
     }
@@ -64,14 +69,27 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 18px 0;
+      padding: 16px 0;
       flex-wrap: wrap;
     }
 
     .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-family: 'DM Serif Display', serif;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--text);
+      letter-spacing: 0.3px;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid rgba(125, 246, 255, 0.35);
+      box-shadow: 0 0 16px rgba(125, 246, 255, 0.22);
     }
 
     nav {
@@ -87,7 +105,7 @@
     .hero {
       margin-bottom: 24px;
       padding: 28px;
-      background: linear-gradient(180deg, rgba(254, 44, 85, 0.10), rgba(23, 23, 34, 0.92));
+      background: linear-gradient(180deg, rgba(125, 246, 255, 0.10), rgba(23, 23, 34, 0.92));
       border: 1px solid var(--border);
       border-radius: 18px;
     }
@@ -154,7 +172,10 @@
 <body>
   <header>
     <div class="wrap topbar">
-      <div class="brand">FBI VRP Content Bot</div>
+      <div class="brand">
+        <img src="./icon.png" alt="FBI VRP icon" class="brand-icon" />
+        <span>FBI VRP</span>
+      </div>
 
       <nav>
         <a href="./index.html">Website</a>
@@ -168,10 +189,10 @@
   <main class="wrap">
     <div class="hero">
       <h1>Terms of Service</h1>
-      <p class="meta">Last updated: April 29, 2026</p>
+      <p class="meta">Last updated: May 8, 2026</p>
 
       <div class="note">
-        These Terms of Service govern access to and use of FBI VRP Content Bot and related moderation and publishing workflows.
+        These Terms of Service govern access to and use of FBI VRP and related moderation and publishing workflows.
       </div>
     </div>
 
@@ -179,7 +200,7 @@
       <h2>1. Acceptance of Terms</h2>
 
       <p>
-        By accessing or using FBI VRP Content Bot ("the Bot" or "the Service"), you agree to be bound by these Terms of Service.
+        By accessing or using FBI VRP ("the Service"), you agree to be bound by these Terms of Service.
         If you do not agree to these terms, you must stop using the Service immediately.
       </p>
     </section>
@@ -188,7 +209,7 @@
       <h2>2. Description of Service</h2>
 
       <p>
-        FBI VRP Content Bot is a Discord bot that integrates with the official TikTok Content Posting API.
+        FBI VRP is a Discord-based publishing workflow that integrates with TikTok's official Content Posting API.
         The Service allows authorized users to connect an account, submit video content, captions, and hashtags through Discord
         for moderation review and possible publishing to a connected TikTok account.
       </p>
@@ -242,7 +263,7 @@
       <h2>6. Moderation and Approval</h2>
 
       <p>
-        Submission through the Bot does not guarantee publication.
+        Submission through the Service does not guarantee publication.
         Requests may be reviewed by authorized moderators or administrators before publishing.
       </p>
 
@@ -287,7 +308,7 @@
 
       <p>
         All trademarks, platform names, logos, and third-party content remain the property of their respective owners.
-        The Bot's implementation, layout, text, code, and related materials are protected to the extent permitted by law.
+        FBI VRP's implementation, layout, text, code, and related materials are protected to the extent permitted by law.
       </p>
     </section>
 
@@ -305,7 +326,7 @@
       <h2>11. Limitation of Liability</h2>
 
       <p>
-        To the maximum extent permitted by law, the operators of FBI VRP Content Bot shall not be liable for any indirect,
+        To the maximum extent permitted by law, the operators of FBI VRP shall not be liable for any indirect,
         incidental, special, consequential, exemplary, or punitive damages, or for any loss of data, profit, reputation,
         business, or content arising from or related to your use of or inability to use the Service.
       </p>
@@ -346,7 +367,7 @@
 
   <footer>
     <div class="wrap">
-      © 2026 FBI VRP Content Bot ·
+      © 2026 FBI VRP ·
       <a href="./index.html">Website</a> ·
       <a href="https://tiktok-oauth-server.onrender.com/tiktok/connect">Connect account</a> ·
       <a href="./privacy.html">Privacy Policy</a> ·
