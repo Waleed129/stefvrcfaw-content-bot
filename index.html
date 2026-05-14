@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>FBI VRP Content Bot</title>
+  <title>FBI VRP</title>
+
+  <meta name="description" content="FBI VRP is a Discord-based publishing workflow for account connection, video submission, moderator approval, and posting through TikTok's Content Posting API." />
+
+  <link rel="icon" type="image/png" href="./icon.png" />
+  <link rel="apple-touch-icon" href="./icon.png" />
 
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
@@ -14,7 +19,8 @@
       --surface: #12121a;
       --surface-2: #171722;
       --border: #232335;
-      --accent: #fe2c55;
+      --accent: #7df6ff;
+      --accent-2: #fe2c55;
       --text: #ececf6;
       --muted: #9a9ab3;
       --soft: #d8d8e8;
@@ -32,7 +38,7 @@
     body {
       margin: 0;
       font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
+      background: radial-gradient(circle at top, rgba(125, 246, 255, 0.08), transparent 38%), var(--bg);
       color: var(--text);
       line-height: 1.8;
     }
@@ -65,14 +71,27 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 18px 0;
+      padding: 16px 0;
       flex-wrap: wrap;
     }
 
     .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-family: 'DM Serif Display', serif;
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       color: var(--text);
+      letter-spacing: 0.3px;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid rgba(125, 246, 255, 0.35);
+      box-shadow: 0 0 16px rgba(125, 246, 255, 0.22);
     }
 
     nav {
@@ -95,7 +114,7 @@
 
     .hero-main,
     .hero-side {
-      background: linear-gradient(180deg, rgba(254, 44, 85, 0.10), rgba(23, 23, 34, 0.94));
+      background: linear-gradient(180deg, rgba(125, 246, 255, 0.10), rgba(23, 23, 34, 0.94));
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 28px;
@@ -123,7 +142,7 @@
     }
 
     h1 {
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
     }
 
     h2 {
@@ -161,13 +180,13 @@
       padding: 12px 16px;
       border-radius: 12px;
       border: 1px solid var(--border);
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: none;
       transition: 0.18s ease;
     }
 
     .btn-primary {
-      background: var(--accent);
+      background: var(--accent-2);
       color: #fff;
       border-color: transparent;
     }
@@ -228,18 +247,18 @@
       gap: 16px;
     }
 
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
     .card {
       background: var(--surface-2);
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 18px;
       height: 100%;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 16px;
     }
 
     .step-num {
@@ -249,8 +268,8 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: rgba(254, 44, 85, 0.16);
-      border: 1px solid rgba(254, 44, 85, 0.28);
+      background: rgba(125, 246, 255, 0.16);
+      border: 1px solid rgba(125, 246, 255, 0.28);
       color: #fff;
       font-weight: 700;
       margin-bottom: 12px;
@@ -291,7 +310,10 @@
 <body>
   <header>
     <div class="wrap topbar">
-      <div class="brand">FBI VRP Content Bot</div>
+      <div class="brand">
+        <img src="./icon.png" alt="FBI VRP icon" class="brand-icon" />
+        <span>FBI VRP</span>
+      </div>
 
       <nav>
         <a href="./index.html">Website</a>
@@ -305,19 +327,19 @@
   <main class="wrap">
     <section class="hero">
       <div class="hero-main">
-        <div class="eyebrow">Content Posting API Integration</div>
+        <div class="eyebrow">FBI VRP · Content Posting API Integration</div>
 
         <h1>Discord-based video submission, review, and publishing workflow.</h1>
 
         <p>
-          FBI VRP Content Bot is a Discord bot that allows authorized users to submit videos,
-          captions, and hashtags from Discord for moderation review and possible publishing
-          to a connected TikTok account using the official Content Posting API.
+          FBI VRP allows authorized Discord users to connect an account, submit video content,
+          add captions and hashtags, send the request to moderators, and publish approved videos
+          through TikTok's official Content Posting API.
         </p>
 
         <p class="meta">
-          Users can start the account connection process from this page, review the legal pages,
-          and understand how the submission and publishing workflow operates.
+          This website provides the official account connection entry point, service overview,
+          Privacy Policy, and Terms of Service for the FBI VRP publishing workflow.
         </p>
 
         <div class="cta-row">
@@ -356,7 +378,7 @@
 
           <li>
             <span class="dot"></span>
-            <span>Approved content is uploaded and published to a connected TikTok account.</span>
+            <span>Approved content is uploaded and published to the connected account.</span>
           </li>
 
           <li>
@@ -371,9 +393,8 @@
       <h2>Account connection</h2>
 
       <p>
-        To use the publishing workflow, an authorized user must connect an account through
-        the login entry point below. This starts the OAuth authorization process and allows
-        the service to receive the permissions required for the Content Posting API.
+        To use the publishing workflow, an authorized user must connect an account through the login entry point below.
+        This starts the OAuth authorization process and allows the service to receive the permissions required for the Content Posting API.
       </p>
 
       <div class="cta-row">
@@ -383,9 +404,8 @@
       </div>
 
       <div class="notice">
-        Access to the publishing workflow is controlled. Connecting an account does not guarantee
-        that every submitted video will be published. All submissions may still require moderation
-        approval and must comply with platform and server rules.
+        Access to the publishing workflow is controlled. Connecting an account does not guarantee publication.
+        All submissions may still require moderator approval and must comply with platform and server rules.
       </div>
     </section>
 
@@ -396,24 +416,21 @@
         <div class="card">
           <h3>Submission</h3>
           <p>
-            Users can submit video files together with captions and hashtags from Discord
-            through a controlled workflow.
+            Users submit supported video files with captions and hashtags from Discord through a controlled workflow.
           </p>
         </div>
 
         <div class="card">
           <h3>Moderation</h3>
           <p>
-            Authorized staff can review each request, inspect content details, edit text fields,
-            and decide whether to approve or reject the submission.
+            Authorized staff review each request, inspect content details, edit text fields, and approve or reject submissions.
           </p>
         </div>
 
         <div class="card">
           <h3>Publishing</h3>
           <p>
-            Once approved, the bot processes the request and sends the content through
-            the official API, then tracks publish status and logs outcomes.
+            Approved requests are processed through the official API, then publish status and outcomes are logged.
           </p>
         </div>
       </div>
@@ -426,33 +443,25 @@
         <div class="card">
           <div class="step-num">1</div>
           <h3>Connect</h3>
-          <p>
-            An authorized user starts the login flow and connects the required account permissions.
-          </p>
+          <p>An authorized user starts the login flow and connects the required account permissions.</p>
         </div>
 
         <div class="card">
           <div class="step-num">2</div>
           <h3>Submit</h3>
-          <p>
-            A user uploads a supported video file and includes caption text or hashtags inside Discord.
-          </p>
+          <p>A user uploads a supported video file and includes caption text or hashtags inside Discord.</p>
         </div>
 
         <div class="card">
           <div class="step-num">3</div>
           <h3>Review</h3>
-          <p>
-            The request is sent to a designated approval workflow where authorized staff can inspect it.
-          </p>
+          <p>The request is sent to a designated approval workflow where authorized staff can inspect it.</p>
         </div>
 
         <div class="card">
           <div class="step-num">4</div>
           <h3>Publish</h3>
-          <p>
-            Approved requests are uploaded to the connected TikTok account and tracked until completion or failure.
-          </p>
+          <p>Approved requests are uploaded and tracked until completion or failure.</p>
         </div>
       </div>
     </section>
@@ -463,32 +472,23 @@
       <div class="grid-3">
         <div class="card">
           <h3>Permission-controlled</h3>
-          <p>
-            The workflow is designed for controlled server environments with role-based access,
-            moderation review, and approval restrictions.
-          </p>
+          <p>The workflow is designed for controlled server environments with role-based access and approval restrictions.</p>
         </div>
 
         <div class="card">
           <h3>Operational logging</h3>
-          <p>
-            Request states, approvals, failures, timestamps, and related operational events may be logged
-            for troubleshooting and moderation history.
-          </p>
+          <p>Request states, approvals, failures, timestamps, and related events may be logged for troubleshooting.</p>
         </div>
 
         <div class="card">
           <h3>API-based publishing</h3>
-          <p>
-            The service relies on official API access and is subject to platform rules,
-            availability, restrictions, and review requirements.
-          </p>
+          <p>The service relies on official API access and is subject to platform rules, restrictions, and review requirements.</p>
         </div>
       </div>
 
       <div class="notice">
         Publication is not guaranteed. Requests may be delayed, rejected, limited, or fail because of moderation decisions,
-        service settings, third-party platform restrictions, or API-related conditions.
+        service settings, platform restrictions, or API-related conditions.
       </div>
     </section>
 
@@ -500,25 +500,11 @@
         <li><a href="./tos.html">Terms of Service</a></li>
       </ul>
     </section>
-
-    <section class="block">
-      <h2>Contact and project page</h2>
-
-      <p>
-        For project-related questions or review references, please use the repository below:
-      </p>
-
-      <p>
-        <a href="https://github.com/Waleed129/stefvrcfaw-content-bot" target="_blank" rel="noopener noreferrer">
-          github.com/Waleed129/stefvrcfaw-content-bot
-        </a>
-      </p>
-    </section>
   </main>
 
   <footer>
     <div class="wrap">
-      © 2026 FBI VRP Content Bot ·
+      © 2026 FBI VRP ·
       <a href="./index.html">Website</a> ·
       <a href="https://tiktok-oauth-server.onrender.com/tiktok/connect">Connect account</a> ·
       <a href="./privacy.html">Privacy Policy</a> ·
